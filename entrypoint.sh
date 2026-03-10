@@ -58,4 +58,5 @@ CREDS
 fi
 
 echo "Starting OpenClaw gateway..."
+export NODE_OPTIONS="--max-old-space-size=512"
 exec openclaw gateway
