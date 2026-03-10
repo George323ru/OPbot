@@ -1,0 +1,19 @@
+services:
+  openclaw:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "18789:18789"
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - GATEWAY_TOKEN=${GATEWAY_TOKEN}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - MODEL=${MODEL:-openrouter/google/gemini-3.1-flash-lite-preview}
+      - TELEGRAM_GROUP_POLICY=${TELEGRAM_GROUP_POLICY:-open}
+    volumes:
+      - openclaw_data:/root/.openclaw/agents
+      - openclaw_logs:/root/.openclaw/logs
+
+volumes:
+  openclaw_data:
+  openclaw_logs:
