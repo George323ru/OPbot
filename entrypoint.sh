@@ -35,7 +35,7 @@ cat > "$CONFIG_FILE" <<EOF
   "gateway": {
     "port": 18789,
     "mode": "local",
-    "bind": "all",
+    "bind": "lan",
     "auth": {
       "mode": "token",
       "token": "${GATEWAY_TOKEN}"
