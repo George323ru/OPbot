@@ -1,6 +1,8 @@
-FROM node:22-alpine
+FROM node:22-slim
 
-RUN apk add --no-cache git python3 make g++
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git cmake g++ python3 \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN npm install -g openclaw
 
