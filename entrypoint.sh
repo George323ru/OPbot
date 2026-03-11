@@ -14,13 +14,12 @@ cat > "$CONFIG_FILE" <<EOF
       },
       "workspace": "/root/.openclaw/workspace",
       "compaction": { "mode": "safeguard" },
-      "maxConcurrent": 4,
-      "subagents": { "maxConcurrent": 8 }
+      "maxConcurrent": 1,
+      "subagents": { "maxConcurrent": 2 }
     }
   },
   "tools": {
-    "profile": "coding",
-    "web": { "search": { "provider": "brave" } }
+    "profile": "minimal"
   },
   "session": { "dmScope": "per-channel-peer" },
   "channels": {
@@ -58,5 +57,5 @@ CREDS
 fi
 
 echo "Starting OpenClaw gateway..."
-export NODE_OPTIONS="--max-old-space-size=384"
+export NODE_OPTIONS="--max-old-space-size=768"
 exec openclaw gateway
