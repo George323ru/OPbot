@@ -19,7 +19,8 @@ cat > "$CONFIG_FILE" <<EOF
     }
   },
   "tools": {
-    "profile": "minimal"
+    "profile": "coding",
+    "web": { "fetch": { "enabled": true } }
   },
   "session": { "dmScope": "per-channel-peer" },
   "channels": {
